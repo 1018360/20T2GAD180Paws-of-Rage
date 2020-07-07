@@ -28,5 +28,9 @@ public class Player_Controller : MonoBehaviour
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
             
         }
+         else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            targetPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 4);
+        }
     }
 }
