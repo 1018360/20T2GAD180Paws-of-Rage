@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -14,9 +15,14 @@ public class Player_Controller : MonoBehaviour
     public float speed;
     public float MaxHeight;
     public float MinHeight;
+    public int health = 3;
     // Update is called once per frame
     void Update()
     {
+        if (health <=0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < MaxHeight)
         {
@@ -30,7 +36,9 @@ public class Player_Controller : MonoBehaviour
         }
          else if (Input.GetKeyDown(KeyCode.Space))
         {
-            targetPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 4);
+            ;
         }
+
+        
     }
 }

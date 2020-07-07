@@ -5,6 +5,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     public float speed;
+    public int damage = 1;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,9 @@ public class Obstacle : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //player takes damage
+            other.GetComponent<Player_Controller>().health -= damage;
+            Debug.Log(other.GetComponent<Player_Controller>().health);
+            Destroy(gameObject);
         }
     }
 
