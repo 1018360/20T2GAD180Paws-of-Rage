@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -16,9 +17,13 @@ public class Player_Controller : MonoBehaviour
     public float MaxHeight;
     public float MinHeight;
     public int health = 3;
+    public Text healthDisplay;
     // Update is called once per frame
     void Update()
     {
+        healthDisplay.text = health.ToString();
+        
+        
         if (health <=0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
