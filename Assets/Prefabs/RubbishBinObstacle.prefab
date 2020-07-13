@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 657389876116948748}
   - component: {fileID: 657389876116948749}
   - component: {fileID: 657389876116948750}
+  - component: {fileID: 1772170108248965231}
   m_Layer: 0
   m_Name: RubbishBinObstacle
   m_TagString: Untagged
@@ -112,3 +113,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  damage: 1
+--- !u!114 &1772170108248965231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657389876116948751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa095243a159284dbf2e95790c25e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 10
