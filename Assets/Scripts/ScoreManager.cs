@@ -25,7 +25,6 @@ public class ScoreManager : MonoBehaviour
         if (other.CompareTag("BinObstacle") || other.CompareTag("SewerObstacle"))
         {
             score++;
-            Debug.Log(score);
         }
     }
 
