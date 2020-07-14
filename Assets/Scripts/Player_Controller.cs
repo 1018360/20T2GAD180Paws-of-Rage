@@ -41,9 +41,10 @@ public class Player_Controller : MonoBehaviour
         }
          else if (Input.GetKeyDown(KeyCode.Space))
         {
-            ;
+            
         }
 
+        
         
     }
 }

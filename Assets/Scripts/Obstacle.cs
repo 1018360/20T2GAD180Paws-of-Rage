@@ -6,9 +6,21 @@ public class Obstacle : MonoBehaviour
 {
     public float speed;
     public int damage = 1;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    IEnumerator Jump()
+    {
+        foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
+        {
+            sewer.GetComponent<CircleCollider2D>().enabled = false;
+        }
+        yield return new WaitForSeconds(2f);
+        foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
+        {
+            sewer.GetComponent<CircleCollider2D>().enabled = true;
+        }
+    }
+        // Start is called before the first frame update
+        void Start()
     {
         
     }
@@ -16,8 +28,15 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         transform.Translate(Vector2.left * speed * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine("Jump");
+        }
     }
+        
+    
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,5 +47,4 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }
