@@ -6,7 +6,7 @@ public class Obstacle : MonoBehaviour
 {
     public float speed;
     public int damage = 1;
-    private AudioSource obstacleCollision;
+    AudioSource obstacleCollision;
 
     IEnumerator Jump()
     {
@@ -23,7 +23,7 @@ public class Obstacle : MonoBehaviour
         // Start is called before the first frame update
         void Start()
     {
-        obstacleCollision = GetComponent<AudioSource>();
+            obstacleCollision = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

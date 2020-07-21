@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 657389876116948749}
   - component: {fileID: 657389876116948750}
   - component: {fileID: 1772170108248965231}
-  - component: {fileID: 9216207083091671555}
+  - component: {fileID: -8891528047070283004}
   m_Layer: 0
   m_Name: RubbishBinObstacle
   m_TagString: BinObstacle
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 10
---- !u!82 &9216207083091671555
+--- !u!82 &-8891528047070283004
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,7 +151,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

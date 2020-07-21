@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4171919189465376804}
   - component: {fileID: 2680219319594879842}
   - component: {fileID: -2383823935233911607}
-  - component: {fileID: -7761024399034520681}
+  - component: {fileID: -4399565788361911475}
   m_Layer: 0
   m_Name: OpenSewerObstacle
   m_TagString: SewerObstacle
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 10
---- !u!82 &-7761024399034520681
+--- !u!82 &-4399565788361911475
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,7 +151,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
