@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
     public int score;
     public Text scoreDisplay;
-    public AudioSource pointsCounter;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -26,10 +27,6 @@ public class ScoreManager : MonoBehaviour
         if (other.CompareTag("BinObstacle") || other.CompareTag("SewerObstacle"))
         {
             score++;
-            pointsCounter.Play();
         }
     }
-
-
-
 }

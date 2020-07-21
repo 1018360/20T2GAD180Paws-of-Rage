@@ -6,13 +6,6 @@ using UnityEngine.UI;
 
 public class Player_Controller : MonoBehaviour
 {
-    public AudioSource playerDeath;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     private Vector2 targetPos;
     public float Yincrement;
     public float speed;
@@ -23,6 +16,13 @@ public class Player_Controller : MonoBehaviour
     public GameObject gameOver;
     public AudioSource healthCounter;
     public AudioSource switchLanes;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -31,7 +31,6 @@ public class Player_Controller : MonoBehaviour
         
         if (health <=0)
         {
-            playerDeath.Play();
             gameOver.SetActive(true);
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
