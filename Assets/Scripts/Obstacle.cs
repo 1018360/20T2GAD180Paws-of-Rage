@@ -6,7 +6,8 @@ public class Obstacle : MonoBehaviour
 {
     public float speed;
     public int damage = 1;
-    AudioSource obstacleCollision;
+    public AudioSource obstacleCollision;
+    public AudioSource jumpSound;
 
     IEnumerator Jump()
     {
@@ -23,7 +24,7 @@ public class Obstacle : MonoBehaviour
         // Start is called before the first frame update
         void Start()
     {
-            obstacleCollision = GetComponent<AudioSource>();
+            
     }
 
     // Update is called once per frame
@@ -34,6 +35,7 @@ public class Obstacle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine("Jump");
+            jumpSound.Play();
         }
     }
         
@@ -46,7 +48,10 @@ public class Obstacle : MonoBehaviour
             obstacleCollision.Play();
             //player takes damage
             other.GetComponent<Player_Controller>().health -= damage;
-            Destroy(gameObject);
+            other.GetComponent<Player_Controller>().healthCounter.Play();
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(gameObject, 2f);
         }
     }
 }
