@@ -24,24 +24,90 @@ public class Spawner : MonoBehaviour
         if (timeBtwSpawn <= 0)
         {
             ++roundCount;
-            if(roundCount == 1)
+
+            switch (roundCount)
             {
-                Instantiate(obstaclePatterns[19], transform.position, Quaternion.identity);
-                timeBtwSpawn = startTimeBtwSpawn;
-                if (startTimeBtwSpawn > minTime)
-                {
-                    startTimeBtwSpawn -= decreaseTime;
-                }
-            }
-            else
-            {
+                case 1:
+                    Instantiate(obstaclePatterns[19], transform.position, Quaternion.identity);
+                    timeBtwSpawn = startTimeBtwSpawn;
+                    if (startTimeBtwSpawn > minTime)
+                    {
+                        startTimeBtwSpawn -= decreaseTime;
+                    }
+                        break;
+
+                case 2:
+                    Instantiate(obstaclePatterns[19], transform.position, Quaternion.identity);
+                    timeBtwSpawn = startTimeBtwSpawn;
+                    if (startTimeBtwSpawn > minTime)
+                    {
+                        startTimeBtwSpawn -= decreaseTime;
+                    }
+                    break;
+
+                case 3:
+                    Instantiate(obstaclePatterns[19], transform.position, Quaternion.identity);
+                    timeBtwSpawn = startTimeBtwSpawn;
+                    if (startTimeBtwSpawn > minTime)
+                    {
+                        startTimeBtwSpawn -= decreaseTime;
+                    }
+                    break;
+
+                case 4:
+                    Instantiate(obstaclePatterns[13], transform.position, Quaternion.identity);
+                    timeBtwSpawn = startTimeBtwSpawn;
+                    if (startTimeBtwSpawn > minTime)
+                    {
+                        startTimeBtwSpawn -= decreaseTime;
+                    }
+                    break;
+
+                case 5:
+                    Instantiate(obstaclePatterns[14], transform.position, Quaternion.identity);
+                    timeBtwSpawn = startTimeBtwSpawn;
+                    if (startTimeBtwSpawn > minTime)
+                    {
+                        startTimeBtwSpawn -= decreaseTime;
+                    }
+                    break;
+
+                case 6:
+                    Instantiate(obstaclePatterns[15], transform.position, Quaternion.identity);
+                    timeBtwSpawn = startTimeBtwSpawn;
+                    if (startTimeBtwSpawn > minTime)
+                    {
+                        startTimeBtwSpawn -= decreaseTime;
+                    }
+                    break;
+
+                case 7:
+                    Instantiate(obstaclePatterns[14], transform.position, Quaternion.identity);
+                    timeBtwSpawn = startTimeBtwSpawn;
+                    if (startTimeBtwSpawn > minTime)
+                    {
+                        startTimeBtwSpawn -= decreaseTime;
+                    }
+                    break;
+
+                case 8:
+                    Instantiate(obstaclePatterns[13], transform.position, Quaternion.identity);
+                    timeBtwSpawn = startTimeBtwSpawn;
+                    if (startTimeBtwSpawn > minTime)
+                    {
+                        startTimeBtwSpawn -= decreaseTime;
+                    }
+                    break;
+
+                default:
                 int rand = Random.Range(0, obstaclePatterns.Length);
                 Instantiate(obstaclePatterns[rand], transform.position, Quaternion.identity);
                 timeBtwSpawn = startTimeBtwSpawn;
                 if (startTimeBtwSpawn > minTime)
                 {
-                    startTimeBtwSpawn -= decreaseTime;
+                     startTimeBtwSpawn -= decreaseTime;
                 }
+                    break;
             }
         }
         else
