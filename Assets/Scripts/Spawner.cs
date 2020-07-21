@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
 
     private float timeBtwSpawn;
     public float startTimeBtwSpawn;
+    public int roundCount;
     public float decreaseTime;
     public float minTime = 0.65f;
     
@@ -22,12 +23,25 @@ public class Spawner : MonoBehaviour
     {
         if (timeBtwSpawn <= 0)
         {
-            int rand = Random.Range(0, obstaclePatterns.Length);
-            Instantiate(obstaclePatterns[rand], transform.position, Quaternion.identity);
-            timeBtwSpawn = startTimeBtwSpawn;
-            if (startTimeBtwSpawn > minTime)
+            ++roundCount;
+            if(roundCount == 1)
             {
-                startTimeBtwSpawn -= decreaseTime;
+                Instantiate(obstaclePatterns[19], transform.position, Quaternion.identity);
+                timeBtwSpawn = startTimeBtwSpawn;
+                if (startTimeBtwSpawn > minTime)
+                {
+                    startTimeBtwSpawn -= decreaseTime;
+                }
+            }
+            else
+            {
+                int rand = Random.Range(0, obstaclePatterns.Length);
+                Instantiate(obstaclePatterns[rand], transform.position, Quaternion.identity);
+                timeBtwSpawn = startTimeBtwSpawn;
+                if (startTimeBtwSpawn > minTime)
+                {
+                    startTimeBtwSpawn -= decreaseTime;
+                }
             }
         }
         else
