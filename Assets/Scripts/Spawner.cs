@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
             switch (roundCount)
             {
                 case 1:
-                    Instantiate(obstaclePatterns[19], transform.position, Quaternion.identity);
+                    Instantiate(obstaclePatterns[24], transform.position, Quaternion.identity);
                     timeBtwSpawn = startTimeBtwSpawn;
                     if (startTimeBtwSpawn > minTime)
                     {
@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
                         break;
 
                 case 2:
-                    Instantiate(obstaclePatterns[19], transform.position, Quaternion.identity);
+                    Instantiate(obstaclePatterns[27], transform.position, Quaternion.identity);
                     timeBtwSpawn = startTimeBtwSpawn;
                     if (startTimeBtwSpawn > minTime)
                     {
@@ -46,7 +46,7 @@ public class Spawner : MonoBehaviour
                     break;
 
                 case 3:
-                    Instantiate(obstaclePatterns[19], transform.position, Quaternion.identity);
+                    Instantiate(obstaclePatterns[27], transform.position, Quaternion.identity);
                     timeBtwSpawn = startTimeBtwSpawn;
                     if (startTimeBtwSpawn > minTime)
                     {
@@ -55,7 +55,7 @@ public class Spawner : MonoBehaviour
                     break;
 
                 case 4:
-                    Instantiate(obstaclePatterns[13], transform.position, Quaternion.identity);
+                    Instantiate(obstaclePatterns[25], transform.position, Quaternion.identity);
                     timeBtwSpawn = startTimeBtwSpawn;
                     if (startTimeBtwSpawn > minTime)
                     {
@@ -64,7 +64,7 @@ public class Spawner : MonoBehaviour
                     break;
 
                 case 5:
-                    Instantiate(obstaclePatterns[14], transform.position, Quaternion.identity);
+                    Instantiate(obstaclePatterns[27], transform.position, Quaternion.identity);
                     timeBtwSpawn = startTimeBtwSpawn;
                     if (startTimeBtwSpawn > minTime)
                     {
@@ -73,7 +73,7 @@ public class Spawner : MonoBehaviour
                     break;
 
                 case 6:
-                    Instantiate(obstaclePatterns[15], transform.position, Quaternion.identity);
+                    Instantiate(obstaclePatterns[27], transform.position, Quaternion.identity);
                     timeBtwSpawn = startTimeBtwSpawn;
                     if (startTimeBtwSpawn > minTime)
                     {
@@ -82,7 +82,7 @@ public class Spawner : MonoBehaviour
                     break;
 
                 case 7:
-                    Instantiate(obstaclePatterns[14], transform.position, Quaternion.identity);
+                    Instantiate(obstaclePatterns[26], transform.position, Quaternion.identity);
                     timeBtwSpawn = startTimeBtwSpawn;
                     if (startTimeBtwSpawn > minTime)
                     {
@@ -91,7 +91,7 @@ public class Spawner : MonoBehaviour
                     break;
 
                 case 8:
-                    Instantiate(obstaclePatterns[13], transform.position, Quaternion.identity);
+                    Instantiate(obstaclePatterns[27], transform.position, Quaternion.identity);
                     timeBtwSpawn = startTimeBtwSpawn;
                     if (startTimeBtwSpawn > minTime)
                     {
@@ -100,7 +100,7 @@ public class Spawner : MonoBehaviour
                     break;
 
                 default:
-                int rand = Random.Range(0, obstaclePatterns.Length);
+                int rand = Random.Range(0, 24);
                 Instantiate(obstaclePatterns[rand], transform.position, Quaternion.identity);
                 timeBtwSpawn = startTimeBtwSpawn;
                 if (startTimeBtwSpawn > minTime)

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3988632040298626858
+--- !u!1 &5890181161654768476
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,36 +8,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3988632040298626856}
-  - component: {fileID: 3988632040298626857}
+  - component: {fileID: 5890181161654768478}
+  - component: {fileID: 5890181161654768479}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Spawner 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3988632040298626856
+--- !u!4 &5890181161654768478
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3988632040298626858}
+  m_GameObject: {fileID: 5890181161654768476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16, y: 0, z: 0}
+  m_LocalPosition: {x: 40, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3988632040298626857
+--- !u!114 &5890181161654768479
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3988632040298626858}
+  m_GameObject: {fileID: 5890181161654768476}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed57a49aedfcfac4aa3d580347727973, type: 3}
@@ -57,6 +57,18 @@ MonoBehaviour:
   - {fileID: 7207844990330278498, guid: b96c8d941cc23184286c5cdb6759e0df, type: 3}
   - {fileID: 9153519227114242597, guid: 4e8af5ad45ee18e4f92d9408a758fee4, type: 3}
   - {fileID: 6679185658809704504, guid: 4c2c3ad021b8e944fb867402d4c845ca, type: 3}
+  - {fileID: 206115467450078959, guid: c7742e35713976444820be728fb53996, type: 3}
+  - {fileID: 1673102640432132027, guid: 3ed97f20069210844b31cd08dd4f4e2d, type: 3}
+  - {fileID: 531837756338450080, guid: 97932b0d9cfcc014a94a891119efb864, type: 3}
+  - {fileID: 6942159257686973853, guid: 64bdde9f3980241419500e37df3d784c, type: 3}
+  - {fileID: 2559164764330781616, guid: fe68c846e78814546bf27c7ea8c245b1, type: 3}
+  - {fileID: 5106478582159515948, guid: 5ae141a14654c004980298330e67785f, type: 3}
+  - {fileID: 6034125933759335847, guid: fc273b9204eb99d429dec92875d355ab, type: 3}
+  - {fileID: 117796952148329359, guid: 8816b6287e6137c408bed266c323d8e0, type: 3}
+  - {fileID: 7421979287701564458, guid: 06b44df2a2641e84881ffb6e0e51358a, type: 3}
+  - {fileID: 2595850122349657439, guid: 93613715b60dc8248a648e75d5c67332, type: 3}
+  - {fileID: 5657018109868607782, guid: add8df16fba5855428f2c4602fbb1054, type: 3}
   startTimeBtwSpawn: 1.25
+  roundCount: 0
   decreaseTime: 0.05
   minTime: 5
