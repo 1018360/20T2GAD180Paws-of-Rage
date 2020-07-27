@@ -499,10 +499,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b0eeb6bb017524984ffdc89fc79d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Yincrement: 4
+  yIncrement: 4
   speed: 40
-  MaxHeight: 4
-  MinHeight: -4
+  MaxHeight: 3
+  MinHeight: -5
   health: 3
   healthDisplay: {fileID: 64141439}
   gameOver: {fileID: 1931520845}
@@ -566,7 +566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202819997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: -1, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
