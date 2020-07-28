@@ -6,6 +6,8 @@ TagManager:
   tags:
   - BinObstacle
   - SewerObstacle
+  - PowerUp
+  - ScoreDisplay
   layers:
   - Default
   - TransparentFX

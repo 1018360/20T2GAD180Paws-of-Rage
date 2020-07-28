@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Player_Controller : MonoBehaviour
     public float MaxHeight;
     public float MinHeight;
     public int health = 3;
-    public Text healthDisplay;
+    public TextMeshProUGUI healthDisplay;
     public GameObject gameOver;
     public GameObject pauseMenu;
     public AudioSource healthCounter;

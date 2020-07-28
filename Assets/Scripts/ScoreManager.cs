@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public int score;
-    public Text scoreDisplay;
+    public TextMeshProUGUI scoreDisplay;
     
     
     // Start is called before the first frame update
