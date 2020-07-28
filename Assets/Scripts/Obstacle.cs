@@ -12,7 +12,19 @@ public class Obstacle : MonoBehaviour
     public AudioSource jumpSound;
     
 
-    IEnumerator Jump()
+    IEnumerator ObstacleJump()
+    {
+        foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
+        {
+            sewer.GetComponent<CircleCollider2D>().enabled = false;
+        }
+        yield return new WaitForSeconds(2f);
+        foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
+        {
+            sewer.GetComponent<CircleCollider2D>().enabled = true;
+        }
+    }
+    IEnumerator BigDog()
     {
         foreach (GameObject dog in GameObject.FindGameObjectsWithTag("Player"))
         {
@@ -23,15 +35,9 @@ public class Obstacle : MonoBehaviour
         {
             dog.transform.localScale = new Vector3(1, 1, 1);
         }
-        foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
-        {
-            sewer.GetComponent<CircleCollider2D>().enabled = false;
-        }
-        yield return new WaitForSeconds(2f);
-        foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
-        {
-            sewer.GetComponent<CircleCollider2D>().enabled = true;
-        }
+    }
+    IEnumerator PowerupJump()
+    {
         foreach (GameObject powerup in GameObject.FindGameObjectsWithTag("PowerUp"))
         {
             powerup.GetComponent<CircleCollider2D>().enabled = false;
@@ -55,7 +61,9 @@ public class Obstacle : MonoBehaviour
         transform.Translate(Vector2.left * speed * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine("Jump");
+            StartCoroutine("ObstacleJump");
+            StartCoroutine("PowerupJump");
+            StartCoroutine("BigDog");
             jumpSound.Play();
         }
     }
