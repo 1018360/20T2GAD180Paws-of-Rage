@@ -5,6 +5,8 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     public float speed;
+    public bool isMetal;
+    public int modeswitch;
     public int damage = 1;
     public AudioSource obstacleCollision;
     public AudioSource jumpSound;
@@ -20,17 +22,26 @@ public class Obstacle : MonoBehaviour
         {
             sewer.GetComponent<CircleCollider2D>().enabled = true;
         }
+        foreach (GameObject powerup in GameObject.FindGameObjectsWithTag("PowerUp"))
+        {
+            powerup.GetComponent<CircleCollider2D>().enabled = false;
+        }
+        yield return new WaitForSeconds(2f);
+        foreach (GameObject powerup in GameObject.FindGameObjectsWithTag("PowerUp"))
+        {
+            powerup.GetComponent<CircleCollider2D>().enabled = true;
+        }
     }
-        // Start is called before the first frame update
-        void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-            
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         transform.Translate(Vector2.left * speed * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -38,8 +49,8 @@ public class Obstacle : MonoBehaviour
             jumpSound.Play();
         }
     }
-        
-    
+
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -52,6 +63,28 @@ public class Obstacle : MonoBehaviour
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             Destroy(gameObject, 2f);
+        }
+    }
+
+    void speedPower()
+    {
+        if (isMetal == true)
+        {
+            modeswitch--;
+            speed--;
+            if (modeswitch < 1)
+            {
+                isMetal = false;
+            }
+        }
+        else
+        {
+            modeswitch++;
+            speed++;
+            if (modeswitch > 5)
+            {
+                isMetal = true;
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3711657761428915700}
   m_Layer: 0
   m_Name: PowerUp
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  isMetal: 0
+  modeswitch: 0
   damage: 1
   obstacleCollision: {fileID: 3711657761428915700}
   jumpSound: {fileID: -2237659087426563906}
