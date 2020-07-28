@@ -10,9 +10,19 @@ public class Obstacle : MonoBehaviour
     public int damage = 1;
     public AudioSource obstacleCollision;
     public AudioSource jumpSound;
+    
 
     IEnumerator Jump()
     {
+        foreach (GameObject dog in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            dog.transform.localScale = new Vector3(2, 2, 1);
+        }
+        yield return new WaitForSeconds(0.5f);
+        foreach (GameObject dog in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            dog.transform.localScale = new Vector3(1, 1, 1);
+        }
         foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
         {
             sewer.GetComponent<CircleCollider2D>().enabled = false;
