@@ -367,7 +367,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 848338244}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1093606455}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84fefdeb53fddc44ca76eb358845319a, type: 3}
@@ -506,6 +506,7 @@ MonoBehaviour:
   health: 3
   healthDisplay: {fileID: 64141439}
   gameOver: {fileID: 1931520845}
+  pauseMenu: {fileID: 1093606455}
   healthCounter: {fileID: 202820004}
   switchLanes: {fileID: 202820005}
 --- !u!212 &202819999
@@ -1469,6 +1470,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1093606455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1011225110001136070, guid: 2c5c6c9dc2118db4199978e9a33e42e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 848338244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1247424251
 GameObject:
   m_ObjectHideFlags: 0

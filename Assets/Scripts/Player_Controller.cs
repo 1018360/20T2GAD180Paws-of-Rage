@@ -14,6 +14,7 @@ public class Player_Controller : MonoBehaviour
     public int health = 3;
     public Text healthDisplay;
     public GameObject gameOver;
+    public GameObject pauseMenu;
     public AudioSource healthCounter;
     public AudioSource switchLanes;
 
@@ -33,6 +34,7 @@ public class Player_Controller : MonoBehaviour
         if (health <=0)
         {
             gameOver.SetActive(true);
+            pauseMenu.SetActive(false);
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             Destroy(gameObject, 2f);
