@@ -1,9 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using TMPro;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -12,11 +9,6 @@ public class Player_Controller : MonoBehaviour
     public float speed;
     public float MaxHeight;
     public float MinHeight;
-    public int health = 3;
-    public TextMeshProUGUI healthDisplay;
-    public GameObject gameOver;
-    public GameObject pauseMenu;
-    public AudioSource healthCounter;
     public AudioSource switchLanes;
 
     // Start is called before the first frame update
@@ -28,19 +20,7 @@ public class Player_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthDisplay.text = health.ToString();
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-
-
-        if (health <=0)
-        {
-            gameOver.SetActive(true);
-            pauseMenu.SetActive(false);
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<SpriteRenderer>().enabled = false;
-            Destroy(gameObject, 2f);
-        }
-        
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < MaxHeight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y + yIncrement);
@@ -51,6 +31,5 @@ public class Player_Controller : MonoBehaviour
             targetPos = new Vector2(transform.position.x, transform.position.y - yIncrement);
             switchLanes.Play();
         }
-        
     }
 }

@@ -28,7 +28,7 @@ public class Obstacle : MonoBehaviour
     {
         foreach (GameObject dog in GameObject.FindGameObjectsWithTag("Player"))
         {
-            dog.transform.localScale = new Vector3(2, 2, 1);
+            dog.transform.localScale = new Vector3(2, 2, 2);
         }
         yield return new WaitForSeconds(0.5f);
         foreach (GameObject dog in GameObject.FindGameObjectsWithTag("Player"))
@@ -76,8 +76,7 @@ public class Obstacle : MonoBehaviour
         {
             obstacleCollision.Play();
             //player takes damage
-            other.GetComponent<Player_Controller>().health -= damage;
-            other.GetComponent<Player_Controller>().healthCounter.Play();
+            other.GetComponent<PlayerHealth>().health -= damage;
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             Destroy(gameObject, 2f);
