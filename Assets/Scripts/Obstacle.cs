@@ -76,8 +76,7 @@ public class Obstacle : MonoBehaviour
         {
             obstacleCollision.Play();
             //player takes damage
-            other.GetComponent<Player_Controller>().health -= damage;
-            other.GetComponent<Player_Controller>().healthCounter.Play();
+            other.GetComponent<PlayerHealth>().health -= damage;
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             Destroy(gameObject, 2f);

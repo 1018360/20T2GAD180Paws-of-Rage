@@ -5277,7 +5277,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 848338244}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093606455}
+  m_GameObject: {fileID: 1661209270}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84fefdeb53fddc44ca76eb358845319a, type: 3}
@@ -5391,6 +5391,7 @@ GameObject:
   - component: {fileID: 202820004}
   - component: {fileID: 202820005}
   - component: {fileID: 202820003}
+  - component: {fileID: 202820006}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Player
@@ -5414,12 +5415,7 @@ MonoBehaviour:
   speed: 40
   MaxHeight: 3
   MinHeight: -5
-  health: 3
-  healthDisplay: {fileID: 64141439}
-  gameOver: {fileID: 1931520845}
-  pauseMenu: {fileID: 1093606455}
-  healthCounter: {fileID: 202820004}
-  switchLanes: {fileID: 202820005}
+  switchLanes: {fileID: 202820004}
 --- !u!212 &202819999
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5743,6 +5739,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &202820006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202819997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d81e11409343cd4cb5a19ea906d7b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  healthDisplay: {fileID: 64141439}
+  gameOver: {fileID: 1931520845}
+  pauseMenu: {fileID: 1661209270}
 --- !u!1 &406592005
 GameObject:
   m_ObjectHideFlags: 0
@@ -10766,7 +10778,6 @@ GameObject:
   - component: {fileID: 800248523}
   - component: {fileID: 800248522}
   - component: {fileID: 800248521}
-  - component: {fileID: 800248520}
   m_Layer: 0
   m_Name: Mailman
   m_TagString: Untagged
@@ -10774,25 +10785,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &800248520
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800248519}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1cd90221d2499a6459b8d72d19499456, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &800248521
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11048,11 +11040,6 @@ MonoBehaviour:
   speed: 40
   MaxHeight: 3
   MinHeight: -5
-  health: 3
-  healthDisplay: {fileID: 64141439}
-  gameOver: {fileID: 1931520845}
-  pauseMenu: {fileID: 1093606455}
-  healthCounter: {fileID: 800248522}
   switchLanes: {fileID: 800248521}
 --- !u!212 &800248526
 SpriteRenderer:
@@ -11692,7 +11679,6 @@ GameObject:
   - component: {fileID: 1002269597}
   - component: {fileID: 1002269596}
   - component: {fileID: 1002269595}
-  - component: {fileID: 1002269594}
   m_Layer: 0
   m_Name: Owner
   m_TagString: Untagged
@@ -11700,25 +11686,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1002269594
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002269593}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1cd90221d2499a6459b8d72d19499456, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &1002269595
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11974,11 +11941,6 @@ MonoBehaviour:
   speed: 40
   MaxHeight: 3
   MinHeight: -5
-  health: 3
-  healthDisplay: {fileID: 64141439}
-  gameOver: {fileID: 1931520845}
-  pauseMenu: {fileID: 1093606455}
-  healthCounter: {fileID: 1002269596}
   switchLanes: {fileID: 1002269595}
 --- !u!212 &1002269600
 SpriteRenderer:
@@ -12227,12 +12189,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1093606455 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1011225110001136070, guid: 2c5c6c9dc2118db4199978e9a33e42e7,
-    type: 3}
-  m_PrefabInstance: {fileID: 848338244}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1247424251
 GameObject:
   m_ObjectHideFlags: 0
@@ -12759,6 +12715,12 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1661209270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1011225110001136070, guid: 2c5c6c9dc2118db4199978e9a33e42e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 848338244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1688402553
 GameObject:
   m_ObjectHideFlags: 0
