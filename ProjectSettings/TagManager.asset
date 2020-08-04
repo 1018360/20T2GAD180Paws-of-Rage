@@ -9,6 +9,7 @@ TagManager:
   - PowerUp
   - ScoreDisplay
   - MetalFlames
+  - EventManager
   layers:
   - Default
   - TransparentFX
