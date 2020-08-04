@@ -5,8 +5,8 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     public float speed;
-    public bool isMetal;
-    public int modeswitch;
+    public bool isMetal = false;
+    public float modeswitch;
     public int damage = 1;
     public AudioSource obstacleCollision;
     public AudioSource jumpSound;
@@ -48,16 +48,28 @@ public class Obstacle : MonoBehaviour
             powerup.GetComponent<CircleCollider2D>().enabled = true;
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("MetalFlames"))
+        {
+            go.GetComponent<ParticleSystem>().Stop();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (modeswitch >= 1)
+        {
+            isMetal = true;
+        }
+        else
+        {
+            isMetal = false;
+        }
+        speedPower();
         transform.Translate(Vector2.left * speed * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -85,23 +97,25 @@ public class Obstacle : MonoBehaviour
 
     void speedPower()
     {
-        if (isMetal == true)
+        if (isMetal)
         {
-            modeswitch--;
-            speed--;
-            if (modeswitch < 1)
+            modeswitch += 0.1f;
+            speed = 7;
+            foreach (GameObject go in GameObject.FindGameObjectsWithTag("MetalFlames"))
             {
-                isMetal = false;
+                go.GetComponent<ParticleSystem>().Play();
             }
+            Debug.Log("Metal!");
         }
         else
         {
-            modeswitch++;
-            speed++;
-            if (modeswitch > 5)
+            modeswitch -= 0.2f;
+            speed = 5;
+            foreach (GameObject go in GameObject.FindGameObjectsWithTag("MetalFlames"))
             {
-                isMetal = true;
+                go.GetComponent<ParticleSystem>().Stop();
             }
+
         }
     }
 }

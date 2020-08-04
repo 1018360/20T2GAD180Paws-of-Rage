@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3774382887177804594}
   - component: {fileID: 2109693953127412242}
   - component: {fileID: 8916804697055189431}
-  - component: {fileID: 714274214385373832}
   - component: {fileID: -2237659087426563906}
   - component: {fileID: 3711657761428915700}
+  - component: {fileID: 3009415007320651202}
   m_Layer: 0
   m_Name: PowerUp
   m_TagString: PowerUp
@@ -115,24 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 10
---- !u!114 &714274214385373832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397546033083392419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed00a58aafd8734ea29db9c071734ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  isMetal: 0
-  modeswitch: 0
-  damage: 1
-  obstacleCollision: {fileID: 3711657761428915700}
-  jumpSound: {fileID: -2237659087426563906}
 --- !u!82 &-2237659087426563906
 AudioSource:
   m_ObjectHideFlags: 0
@@ -325,3 +307,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3009415007320651202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397546033083392419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf5b3df6212af94d9712eb1fe7c5196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpSound: {fileID: 3711657761428915700}
+  speed: 5
