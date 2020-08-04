@@ -530,11 +530,11 @@ GameObject:
   - component: {fileID: 162102341}
   m_Layer: 0
   m_Name: Particle System (1)
-  m_TagString: Untagged
+  m_TagString: MetalFlames
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &162102341
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5768,11 +5768,11 @@ GameObject:
   - component: {fileID: 406592006}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: MetalFlames
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &406592006
 ParticleSystemRenderer:
   serializedVersion: 6
