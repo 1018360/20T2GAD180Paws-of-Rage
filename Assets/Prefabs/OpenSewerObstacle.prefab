@@ -115,8 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  isMetal: 0
-  modeswitch: 0
+  maxSpeed: 20
+  modeSwitch: 1
+  metalMultiplier: 4
   damage: 1
   obstacleCollision: {fileID: -4399565788361911475}
   jumpSound: {fileID: 5940230978340952452}

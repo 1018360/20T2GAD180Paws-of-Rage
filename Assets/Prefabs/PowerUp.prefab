@@ -321,3 +321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpSound: {fileID: 3711657761428915700}
   speed: 5
+  maxSpeed: 20
+  modeSwitch: 1
+  metalMultiplier: 4

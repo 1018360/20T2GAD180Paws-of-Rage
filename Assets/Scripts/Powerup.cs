@@ -6,78 +6,96 @@ public class Powerup : MonoBehaviour
 {
     public AudioSource powerUpSound;
     public float speed;
-    public bool isMetal = false;
-    public float modeswitch;
+    public float maxSpeed;
+    public float modeSwitch = 1f;
+    public float metalMultiplier;
+    public enum DogMood { Metal, Chill };
+    DogMood dogFeels;
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach (GameObject go in GameObject.FindGameObjectsWithTag("MetalFlames"))
-        {
-            go.GetComponent<ParticleSystem>().Stop();
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
-        if (modeswitch >= 1)
+        if (modeSwitch >= 5f)
         {
-            isMetal = true;
+            GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>().MetalMode.Invoke();
+            modeSwitch--;
         }
-        else
+        else if (modeSwitch < 5f)
         {
-            isMetal = false;
+            GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>().ChillMode.Invoke();
         }
-        speedPower();
+        switch (dogFeels)
+        {
+            case DogMood.Metal:
+                foreach (GameObject go in GameObject.FindGameObjectsWithTag("SewerObstacle"))
+                {
+                    go.GetComponent<Obstacle>().modeSwitch *= metalMultiplier;
+                }
+                foreach (GameObject go in GameObject.FindGameObjectsWithTag("BinObstacle"))
+                {
+                    go.GetComponent<Obstacle>().modeSwitch *= metalMultiplier;
+                }
+                foreach (GameObject go in GameObject.FindGameObjectsWithTag("PowerUp"))
+                {
+                    go.GetComponent<Powerup>().modeSwitch *= metalMultiplier;
+                }
+                break;
+
+            case DogMood.Chill:
+                foreach (GameObject go in GameObject.FindGameObjectsWithTag("SewerObstacle"))
+                {
+                    go.GetComponent<Obstacle>().modeSwitch = 1;
+                }
+                foreach (GameObject go in GameObject.FindGameObjectsWithTag("BinObstacle"))
+                {
+                    go.GetComponent<Obstacle>().modeSwitch = 1;
+                }
+                foreach (GameObject go in GameObject.FindGameObjectsWithTag("PowerUp"))
+                {
+                    go.GetComponent<Powerup>().modeSwitch = 1;
+                }
+                break;
+
+            default:
+                Debug.Log("Hit the default state of the switch!");
+                break;
+        }
+
     }
 
-    void speedPower()
+    public void SpeedPower()
     {
-        if (isMetal)
+        if (speed <= maxSpeed)
         {
-            modeswitch += 0.1f;
-            speed = 7;
-            foreach (GameObject go in GameObject.FindGameObjectsWithTag("MetalFlames"))
-            {
-                go.GetComponent<ParticleSystem>().Play();
-            }
-            Debug.Log("Metal!");
+            speed *= metalMultiplier;
         }
-        else
-        {
-            modeswitch -= 0.2f;
-            speed = 5;
-            foreach (GameObject go in GameObject.FindGameObjectsWithTag("MetalFlames"))
-            {
-                go.GetComponent<ParticleSystem>().Stop();
-            }
+    }
 
-        }
+    public void SpeedNerf()
+    {
+        speed = 5;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            dogFeels = DogMood.Metal;
             powerUpSound.Play();
-            
-            foreach (GameObject go in GameObject.FindGameObjectsWithTag("SewerObstacle"))
-            {
-                go.GetComponent<Obstacle>().modeswitch = 2f;
-            }
-            foreach (GameObject go in GameObject.FindGameObjectsWithTag("BinObstacle"))
-            {
-                go.GetComponent<Obstacle>().modeswitch = 2f;
-            }
-            foreach (GameObject go in GameObject.FindGameObjectsWithTag("PowerUp"))
-            {
-                go.GetComponent<Powerup>().modeswitch = 2f;
-            }
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             Destroy(gameObject, 2f);
+        }
+        else
+        {
+            dogFeels = DogMood.Chill;
         }
     }
 

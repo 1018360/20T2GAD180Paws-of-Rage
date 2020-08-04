@@ -5,8 +5,9 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     public float speed;
-    public bool isMetal = false;
-    public float modeswitch;
+    public float maxSpeed;
+    public float modeSwitch = 1f;
+    public float metalMultiplier;
     public int damage = 1;
     public AudioSource obstacleCollision;
     public AudioSource jumpSound;
@@ -18,7 +19,7 @@ public class Obstacle : MonoBehaviour
         {
             sewer.GetComponent<CircleCollider2D>().enabled = false;
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
         {
             sewer.GetComponent<CircleCollider2D>().enabled = true;
@@ -42,7 +43,7 @@ public class Obstacle : MonoBehaviour
         {
             powerup.GetComponent<CircleCollider2D>().enabled = false;
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         foreach (GameObject powerup in GameObject.FindGameObjectsWithTag("PowerUp"))
         {
             powerup.GetComponent<CircleCollider2D>().enabled = true;
@@ -52,24 +53,24 @@ public class Obstacle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (GameObject go in GameObject.FindGameObjectsWithTag("MetalFlames"))
-        {
-            go.GetComponent<ParticleSystem>().Stop();
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (modeswitch >= 1)
+        if (modeSwitch >= 5f)
         {
-            isMetal = true;
+            GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>().MetalMode.Invoke();
+            modeSwitch--;
         }
-        else
+        else if (modeSwitch < 5f)
         {
-            isMetal = false;
+            GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>().ChillMode.Invoke();
         }
-        speedPower();
+
+
+
         transform.Translate(Vector2.left * speed * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -95,27 +96,17 @@ public class Obstacle : MonoBehaviour
         }
     }
 
-    void speedPower()
+    public void SpeedPower()
     {
-        if (isMetal)
+        if (speed <= maxSpeed)
         {
-            modeswitch += 0.1f;
-            speed = 7;
-            foreach (GameObject go in GameObject.FindGameObjectsWithTag("MetalFlames"))
-            {
-                go.GetComponent<ParticleSystem>().Play();
-            }
-            Debug.Log("Metal!");
-        }
-        else
-        {
-            modeswitch -= 0.2f;
-            speed = 5;
-            foreach (GameObject go in GameObject.FindGameObjectsWithTag("MetalFlames"))
-            {
-                go.GetComponent<ParticleSystem>().Stop();
-            }
-
+            speed *= metalMultiplier;
         }
     }
+
+    public void SpeedNerf()
+    {
+        speed = 5;
+    }
+
 }
