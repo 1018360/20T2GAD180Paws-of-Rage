@@ -5,9 +5,6 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     public float speed;
-    public float maxSpeed;
-    public float modeSwitch = 1f;
-    public float metalMultiplier;
     public int damage = 1;
     public AudioSource obstacleCollision;
     public AudioSource jumpSound;
@@ -59,18 +56,6 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (modeSwitch >= 5f)
-        {
-            GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>().MetalMode.Invoke();
-            modeSwitch--;
-        }
-        else if (modeSwitch < 5f)
-        {
-            GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>().ChillMode.Invoke();
-        }
-
-
-
         transform.Translate(Vector2.left * speed * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -92,21 +77,7 @@ public class Obstacle : MonoBehaviour
             other.GetComponent<PlayerHealth>().health -= damage;
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 5f);
         }
     }
-
-    public void SpeedPower()
-    {
-        if (speed <= maxSpeed)
-        {
-            speed *= metalMultiplier;
-        }
-    }
-
-    public void SpeedNerf()
-    {
-        speed = 5;
-    }
-
 }
