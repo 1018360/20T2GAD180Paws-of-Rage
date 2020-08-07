@@ -7,6 +7,7 @@ public class Powerup : MonoBehaviour
     public AudioSource powerUpSound;
     public float speed;
     public float maxSpeed;
+    public float baseSpeed;
     public float speedBoost;
     public float speedBoostTime;
     private bool powerupCollected = false;
@@ -59,15 +60,15 @@ public class Powerup : MonoBehaviour
             {
                 foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
                 {
-                    sewer.GetComponent<Obstacle>().speed = 5;
+                    sewer.GetComponent<Obstacle>().speed = baseSpeed;
                 }
                 foreach (GameObject bin in GameObject.FindGameObjectsWithTag("BinObstacle"))
                 {
-                    bin.GetComponent<Obstacle>().speed = 5;
+                    bin.GetComponent<Obstacle>().speed = baseSpeed;
                 }
                 foreach (GameObject powerup in GameObject.FindGameObjectsWithTag("PowerUp"))
                 {
-                    powerup.GetComponent<Powerup>().speed = 5;
+                    powerup.GetComponent<Powerup>().speed = baseSpeed;
                 }
                 GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>().ChillMode.Invoke();
             }

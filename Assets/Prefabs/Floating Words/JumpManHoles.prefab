@@ -455,9 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed00a58aafd8734ea29db9c071734ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  isMetal: 0
-  modeswitch: 0
+  speed: 10
   damage: 0
   obstacleCollision: {fileID: 0}
   jumpSound: {fileID: 0}

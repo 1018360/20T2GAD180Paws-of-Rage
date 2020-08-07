@@ -16,7 +16,7 @@ public class Obstacle : MonoBehaviour
         {
             sewer.GetComponent<CircleCollider2D>().enabled = false;
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
         {
             sewer.GetComponent<CircleCollider2D>().enabled = true;
@@ -40,7 +40,7 @@ public class Obstacle : MonoBehaviour
         {
             powerup.GetComponent<CircleCollider2D>().enabled = false;
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         foreach (GameObject powerup in GameObject.FindGameObjectsWithTag("PowerUp"))
         {
             powerup.GetComponent<CircleCollider2D>().enabled = true;

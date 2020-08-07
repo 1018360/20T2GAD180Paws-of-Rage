@@ -320,7 +320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpSound: {fileID: 3711657761428915700}
-  speed: 5
-  maxSpeed: 10
-  speedBoost: 2
-  speedBoostTime: 2
+  speed: 10
+  maxSpeed: 20
+  baseSpeed: 10
+  speedBoost: 5
+  speedBoostTime: 5

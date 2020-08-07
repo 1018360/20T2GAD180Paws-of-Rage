@@ -114,10 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed00a58aafd8734ea29db9c071734ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  maxSpeed: 20
-  modeSwitch: 1
-  metalMultiplier: 4
+  speed: 10
   damage: 1
   obstacleCollision: {fileID: -4399565788361911475}
   jumpSound: {fileID: 5940230978340952452}
