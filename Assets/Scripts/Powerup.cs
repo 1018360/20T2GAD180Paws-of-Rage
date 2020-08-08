@@ -12,10 +12,13 @@ public class Powerup : MonoBehaviour
     public float speedBoostTime;
     private bool powerupCollected = false;
     private float timer;
+    public float xIncrement;
+
 
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        GameObject Dog = GameObject.FindGameObjectWithTag("Player");
         if (other.CompareTag("Player"))
         {
             powerupCollected = true;
@@ -33,7 +36,11 @@ public class Powerup : MonoBehaviour
                 {
                     powerup.GetComponent<Powerup>().speed += speedBoost;
                 }
+                
+                
             }
+            Dog.GetComponent<Player_Controller>().targetPos = new Vector2(Dog.GetComponent<Transform>().position.x + xIncrement, Dog.GetComponent<Transform>().position.y);
+            
             powerUpSound.Play();
             GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>().MetalMode.Invoke();
             GetComponent<CircleCollider2D>().enabled = false;
@@ -46,6 +53,7 @@ public class Powerup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject Dog = GameObject.FindGameObjectWithTag("Player");
         powerupCollected = false;
     }
 

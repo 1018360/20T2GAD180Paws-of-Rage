@@ -5576,6 +5576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b0eeb6bb017524984ffdc89fc79d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetPos: {x: 0, y: 0}
   yIncrement: 4
   speed: 40
   MaxHeight: 3
@@ -11525,6 +11526,7 @@ GameObject:
   - component: {fileID: 800248523}
   - component: {fileID: 800248522}
   - component: {fileID: 800248521}
+  - component: {fileID: 800248520}
   m_Layer: 0
   m_Name: Mailman
   m_TagString: Untagged
@@ -11532,6 +11534,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &800248520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800248519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee26243906c89d4d9de9de2fe2ccda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &800248521
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11752,10 +11766,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800248519}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -11783,6 +11797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b0eeb6bb017524984ffdc89fc79d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetPos: {x: 0, y: 0}
   yIncrement: 4
   speed: 40
   MaxHeight: 3
@@ -12878,6 +12893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b0eeb6bb017524984ffdc89fc79d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetPos: {x: 0, y: 0}
   yIncrement: 4
   speed: 40
   MaxHeight: 3

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_Controller : MonoBehaviour
 {
-    private Vector2 targetPos;
+    public Vector2 targetPos;
     public float yIncrement;
     public float speed;
     public float MaxHeight;
