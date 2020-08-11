@@ -5,10 +5,7 @@ using UnityEngine;
 public class Player_Controller : MonoBehaviour
 {
     public Vector2 targetPos;
-    public float yIncrement;
     public float speed;
-    public float MaxHeight;
-    public float MinHeight;
     public AudioSource switchLanes;
     public GameObject[] lanes;
     public int laneTracker = 1;

@@ -20,11 +20,6 @@ public class Powerup : MonoBehaviour
     Animator dogAnimator;
     public Sprite[] backgroundSprite = new Sprite[18];
     
-        
-
-
-
-
         void OnTriggerEnter2D(Collider2D other)
     {
         GameObject Dog = GameObject.FindGameObjectWithTag("Player");
@@ -45,8 +40,6 @@ public class Powerup : MonoBehaviour
                 {
                     powerup.GetComponent<Powerup>().speed += speedBoost;
                 }
-                
-                
             }
             Dog.GetComponent<Player_Controller>().lanes[0].transform.position = new Vector2(Dog.GetComponent<Player_Controller>().lanes[0].transform.position.x + xIncrement, Dog.GetComponent<Player_Controller>().lanes[0].transform.position.y);
             Dog.GetComponent<Player_Controller>().lanes[1].transform.position = new Vector2(Dog.GetComponent<Player_Controller>().lanes[1].transform.position.x + xIncrement, Dog.GetComponent<Player_Controller>().lanes[1].transform.position.y);
@@ -102,7 +95,6 @@ public class Powerup : MonoBehaviour
     {
         powerupCollected = false;
         dogAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        
     }
 
     // Update is called once per frame

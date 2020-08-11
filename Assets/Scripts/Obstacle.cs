@@ -8,8 +8,6 @@ public class Obstacle : MonoBehaviour
     public int damage = 1;
     public AudioSource obstacleCollision;
     public AudioSource jumpSound;
-    
-
     IEnumerator ObstacleJump()
     {
         foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
