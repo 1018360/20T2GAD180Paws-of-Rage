@@ -22,7 +22,7 @@ public class Powerup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        
+        GameObject Dog = GameObject.FindGameObjectWithTag("Player");
         if (other.CompareTag("Player"))
         {
             powerupCollected = true;
@@ -43,7 +43,7 @@ public class Powerup : MonoBehaviour
                 
                 
             }
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Controller>().targetPos = new Vector2(Dog.GetComponent<Transform>().position.x + xIncrement, Dog.GetComponent<Transform>().position.y);
+            Dog.GetComponent<Player_Controller>().targetPos = new Vector2(Dog.GetComponent<Transform>().position.x + xIncrement, Dog.GetComponent<Transform>().position.y);
             
             dogAnimator.SetBool("DogFacePaint", true);
             powerUpSound.Play();
@@ -61,7 +61,6 @@ public class Powerup : MonoBehaviour
         powerupCollected = false;
         dogAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         
-
     }
 
     // Update is called once per frame
