@@ -10,26 +10,36 @@ public class Player_Controller : MonoBehaviour
     public float MaxHeight;
     public float MinHeight;
     public AudioSource switchLanes;
+    public GameObject[] lanes;
+    public int laneTracker = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        targetPos = new Vector2(transform.position.x, transform.position.y);
+        targetPos = lanes[laneTracker].transform.position;
     }
     
     // Update is called once per frame
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < MaxHeight)
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            targetPos = new Vector2(transform.position.x, transform.position.y + yIncrement);
-            switchLanes.Play();
+            if (laneTracker < 2)
+            {
+                laneTracker++;
+                targetPos = lanes[laneTracker].transform.position;
+                switchLanes.Play();
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > MinHeight)
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            targetPos = new Vector2(transform.position.x, transform.position.y - yIncrement);
-            switchLanes.Play();
+            if (laneTracker > 0)
+            {
+                laneTracker--;
+                targetPos = lanes[laneTracker].transform.position;
+                switchLanes.Play();
+            }
         }
     }
 }

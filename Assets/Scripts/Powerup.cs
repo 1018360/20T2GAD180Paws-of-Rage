@@ -43,8 +43,9 @@ public class Powerup : MonoBehaviour
                 
                 
             }
-            Dog.GetComponent<Player_Controller>().targetPos = new Vector2(Dog.GetComponent<Transform>().position.x + xIncrement, Dog.GetComponent<Transform>().position.y);
-            
+            Dog.GetComponent<Player_Controller>().lanes[0].transform.position = new Vector2(Dog.GetComponent<Player_Controller>().lanes[0].transform.position.x + xIncrement, Dog.GetComponent<Player_Controller>().lanes[0].transform.position.y);
+            Dog.GetComponent<Player_Controller>().lanes[1].transform.position = new Vector2(Dog.GetComponent<Player_Controller>().lanes[1].transform.position.x + xIncrement, Dog.GetComponent<Player_Controller>().lanes[1].transform.position.y);
+            Dog.GetComponent<Player_Controller>().lanes[2].transform.position = new Vector2(Dog.GetComponent<Player_Controller>().lanes[2].transform.position.x + xIncrement, Dog.GetComponent<Player_Controller>().lanes[2].transform.position.y);
             dogAnimator.SetBool("DogFacePaint", true);
             powerUpSound.Play();
             GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>().MetalMode.Invoke();
