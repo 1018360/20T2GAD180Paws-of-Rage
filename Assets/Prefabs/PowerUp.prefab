@@ -325,4 +325,4 @@ MonoBehaviour:
   baseSpeed: 10
   speedBoost: 5
   speedBoostTime: 5
-  xIncrement: 2.5
+  xIncrement: 3

@@ -8,6 +8,7 @@ public class Mailman : MonoBehaviour
     public float speed;
     public GameObject[] lanes;
     public int laneTracker = 1;
+    public GameObject winner;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +41,8 @@ public class Mailman : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Winner!!!!");
+            winner.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 }
