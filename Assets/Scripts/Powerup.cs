@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Powerup : MonoBehaviour
@@ -13,6 +15,8 @@ public class Powerup : MonoBehaviour
     private bool powerupCollected = false;
     private float timer;
     public float xIncrement;
+    Animator dogAnimator;
+    
 
 
 
@@ -41,6 +45,7 @@ public class Powerup : MonoBehaviour
             }
             Dog.GetComponent<Player_Controller>().targetPos = new Vector2(Dog.GetComponent<Transform>().position.x + xIncrement, Dog.GetComponent<Transform>().position.y);
             
+            dogAnimator.SetBool("DogFacePaint", true);
             powerUpSound.Play();
             GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>().MetalMode.Invoke();
             GetComponent<CircleCollider2D>().enabled = false;
@@ -53,8 +58,9 @@ public class Powerup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject Dog = GameObject.FindGameObjectWithTag("Player");
         powerupCollected = false;
+        dogAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -79,6 +85,8 @@ public class Powerup : MonoBehaviour
                     powerup.GetComponent<Powerup>().speed = baseSpeed;
                 }
                 GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>().ChillMode.Invoke();
+                
+                dogAnimator.SetBool("DogFacePaint", false);
             }
         }
     }
