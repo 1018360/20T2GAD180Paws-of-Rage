@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0)
         {
+            Time.timeScale = 0f;
             gameOver.SetActive(true);
             pauseMenu.SetActive(false);
             GetComponent<BoxCollider2D>().enabled = false;

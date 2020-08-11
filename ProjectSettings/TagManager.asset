@@ -10,6 +10,12 @@ TagManager:
   - ScoreDisplay
   - MetalFlames
   - EventManager
+  - Background
+  - Fence
+  - Road
+  - Tree
+  - Hills
+  - Hills2
   layers:
   - Default
   - TransparentFX

@@ -326,3 +326,22 @@ MonoBehaviour:
   speedBoost: 5
   speedBoostTime: 5
   xIncrement: 3
+  backgroundSprite:
+  - {fileID: 21300000, guid: e0b31ea8b58b6d748974ed920ec765ec, type: 3}
+  - {fileID: 21300000, guid: 378d53daca9a4444bae04162e78aef02, type: 3}
+  - {fileID: 21300000, guid: 15f91f1b769de4a4b984ad2e48ae20d7, type: 3}
+  - {fileID: 21300000, guid: 0e05cac9c9069da4c9c4ff2b2ed201f7, type: 3}
+  - {fileID: 21300000, guid: 9807a92d86b4646439cad49619c18222, type: 3}
+  - {fileID: 21300000, guid: fc6b77d376670fd4493e427666b9b9ae, type: 3}
+  - {fileID: 21300000, guid: 42d4f77356a8c3041b2cbf18025c065c, type: 3}
+  - {fileID: 21300000, guid: ae719ee8bbc36e44abb2f11d99ccc217, type: 3}
+  - {fileID: 21300000, guid: ad976669bb638df4fb1c412aa81e921b, type: 3}
+  - {fileID: 21300000, guid: edb1816914c358c41a1111b3c0c567e1, type: 3}
+  - {fileID: 21300000, guid: f66bbf56f4acc574c906e19c7bd71ec8, type: 3}
+  - {fileID: 21300000, guid: 7146ba2d8a5269b4a81efceb72277c0f, type: 3}
+  - {fileID: 21300000, guid: 7eda0315e85699e45956bf94c441a484, type: 3}
+  - {fileID: 21300000, guid: 2ccb01c266e79784bb495a0d6239b64d, type: 3}
+  - {fileID: 21300000, guid: 864434cea79204a48b5cec116ded79aa, type: 3}
+  - {fileID: 21300000, guid: 40b7d2ec3986d8d439c2da4aa4d51f8c, type: 3}
+  - {fileID: 21300000, guid: bd9ea32da09cc0c47b24758239250453, type: 3}
+  - {fileID: 21300000, guid: a105b12fae8f0c3469f5614ad9122e39, type: 3}

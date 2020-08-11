@@ -6068,7 +6068,7 @@ GameObject:
   - component: {fileID: 204541048}
   m_Layer: 0
   m_Name: ParaRoadCalm
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6225,7 +6225,7 @@ GameObject:
   - component: {fileID: 222582998}
   m_Layer: 0
   m_Name: ParaRoadCalm (1)
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6321,8 +6321,8 @@ GameObject:
   - component: {fileID: 252402933}
   - component: {fileID: 252402932}
   m_Layer: 0
-  m_Name: ParaRoadCalm (3)
-  m_TagString: Untagged
+  m_Name: Hills2
+  m_TagString: Hills2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11524,7 +11524,7 @@ GameObject:
   - component: {fileID: 591064126}
   m_Layer: 0
   m_Name: ParaFenceCalm (3)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11748,7 +11748,7 @@ GameObject:
   - component: {fileID: 627801698}
   m_Layer: 0
   m_Name: ParaTreeCalm
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11844,8 +11844,8 @@ GameObject:
   - component: {fileID: 773381842}
   - component: {fileID: 773381841}
   m_Layer: 0
-  m_Name: ParaRoadCalm (2)
-  m_TagString: Untagged
+  m_Name: Hills2
+  m_TagString: Hills2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12003,7 +12003,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -5, y: 0}
+  m_Offset: {x: -10, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12526,7 +12526,7 @@ GameObject:
   - component: {fileID: 889352993}
   m_Layer: 0
   m_Name: Hills
-  m_TagString: Untagged
+  m_TagString: Hills
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12779,7 +12779,7 @@ GameObject:
   - component: {fileID: 988440415}
   m_Layer: 0
   m_Name: ParaTreeCalm (1)
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13075,7 +13075,7 @@ GameObject:
   - component: {fileID: 1052058007}
   m_Layer: 0
   m_Name: Hills
-  m_TagString: Untagged
+  m_TagString: Hills
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13268,7 +13268,7 @@ GameObject:
   - component: {fileID: 1247424252}
   m_Layer: 0
   m_Name: ParallaxBackgroundFrontLayer (1)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13833,7 +13833,7 @@ GameObject:
   - component: {fileID: 1334466252}
   m_Layer: 0
   m_Name: ParaFenceCalm
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13960,7 +13960,7 @@ GameObject:
   - component: {fileID: 1359180151}
   m_Layer: 0
   m_Name: ParaFenceCalm (2)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14184,7 +14184,7 @@ GameObject:
   - component: {fileID: 1429803903}
   m_Layer: 0
   m_Name: ParaFenceCalm (1)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14280,8 +14280,8 @@ GameObject:
   - component: {fileID: 1463541648}
   - component: {fileID: 1463541647}
   m_Layer: 0
-  m_Name: ParaRoadCalm (4)
-  m_TagString: Untagged
+  m_Name: Hills2
+  m_TagString: Hills2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14378,7 +14378,7 @@ GameObject:
   - component: {fileID: 1481357741}
   m_Layer: 0
   m_Name: ParallaxBackgroundFrontLayer
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
