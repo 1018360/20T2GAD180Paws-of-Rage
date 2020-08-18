@@ -16,10 +16,12 @@ public class GameOverMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(0);
         }
     }

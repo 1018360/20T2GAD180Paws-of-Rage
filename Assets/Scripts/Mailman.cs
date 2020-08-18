@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Mailman : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class Mailman : MonoBehaviour
     public GameObject[] lanes;
     public int laneTracker = 1;
     public GameObject winner;
+    public bool hasWon;
     // Start is called before the first frame update
     void Start()
     {
+        hasWon = false;
         targetPos = lanes[laneTracker].transform.position;
     }
 
@@ -35,12 +38,23 @@ public class Mailman : MonoBehaviour
                 targetPos = lanes[laneTracker].transform.position;
             }
         }
+        if (Input.GetKeyDown(KeyCode.R) && hasWon == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1f;
+        }
+        if (Input.GetKeyDown(KeyCode.Q) && hasWon == true)
+        {
+            SceneManager.LoadScene(0);
+            Time.timeScale = 1f;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            hasWon = true;
             winner.SetActive(true);
             Time.timeScale = 0f;
         }
