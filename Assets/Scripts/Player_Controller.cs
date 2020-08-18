@@ -9,6 +9,7 @@ public class Player_Controller : MonoBehaviour
     public AudioSource switchLanes;
     public GameObject[] lanes;
     public int laneTracker = 1;
+    public AudioSource jumpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,24 @@ public class Player_Controller : MonoBehaviour
                 targetPos = lanes[laneTracker].transform.position;
                 switchLanes.Play();
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine("ObstacleJump");
+            jumpSound.Play();
+        }
+    }
+
+    IEnumerator ObstacleJump()
+    {
+        foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
+        {
+            sewer.GetComponent<CircleCollider2D>().enabled = false;
+        }
+        yield return new WaitForSeconds(0.5f);
+        foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
+        {
+            sewer.GetComponent<CircleCollider2D>().enabled = true;
         }
     }
 

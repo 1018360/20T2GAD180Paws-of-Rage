@@ -7,19 +7,8 @@ public class Obstacle : MonoBehaviour
     public float speed;
     public int damage = 1;
     public AudioSource obstacleCollision;
-    public AudioSource jumpSound;
-    IEnumerator ObstacleJump()
-    {
-        foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
-        {
-            sewer.GetComponent<CircleCollider2D>().enabled = false;
-        }
-        yield return new WaitForSeconds(0.5f);
-        foreach (GameObject sewer in GameObject.FindGameObjectsWithTag("SewerObstacle"))
-        {
-            sewer.GetComponent<CircleCollider2D>().enabled = true;
-        }
-    }
+    
+    
     IEnumerator BigDog()
     {
         foreach (GameObject dog in GameObject.FindGameObjectsWithTag("Player"))
@@ -57,10 +46,10 @@ public class Obstacle : MonoBehaviour
         transform.Translate(Vector2.left * speed * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine("ObstacleJump");
+            
             StartCoroutine("PowerupJump");
             StartCoroutine("BigDog");
-            jumpSound.Play();
+            
         }
     }
 
