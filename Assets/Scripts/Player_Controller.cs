@@ -39,4 +39,9 @@ public class Player_Controller : MonoBehaviour
             }
         }
     }
+
+    public void MoveWithLanes()
+    {
+        targetPos = lanes[laneTracker].transform.position;
+    }
 }
