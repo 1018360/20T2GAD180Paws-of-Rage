@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
 {
     public int score;
     public TextMeshProUGUI scoreDisplay;
+    public TextMeshProUGUI finalScoreDisplay;
     
     
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         scoreDisplay.text = score.ToString();
+        finalScoreDisplay.text = score.ToString();
     }
 
     void OnTriggerEnter2D(Collider2D other)
